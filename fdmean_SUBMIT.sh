@@ -16,8 +16,8 @@ ID=$((SLURM_ARRAY_TASK_ID-1))
 MAINDIR='/dartfs-hpc/rc/lab/C/CANlab/labdata/projects/spacetop_projects_cue'
 NPYDIR='/dartfs-hpc/rc/lab/C/CANlab/labdata/data/spacetop_data/derivatives/fmriprep_qc/numpy_bold'
 OUTPUTDIR="/dartfs-hpc/rc/lab/C/CANlab/labdata/data/spacetop_data/derivatives/fmriprep_qc/fmriprep_bold_correlation"
-#OUTPUTDIR='/dartfs-hpc/rc/lab/C/CANlab/labdata/projects/spacetop_projects_cue/figure/fmri/qc/fmriprep_bold_correlation'
+
 python ${MAINDIR}/scripts/step00_qc/qc03_fmriprep_visualize/qc05_plotfmriprep.py \
 --slurm-id ${ID} \
---inputdir ${NPYDIR} \
---outputdir ${OUTPUTDIR}
+--fmriprepdir ${NPYDIR} \
+--savedir ${OUTPUTDIR}
