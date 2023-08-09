@@ -42,3 +42,5 @@ for fname in flist:
     # TODO: declare a save_dir instead of an absolute path like '/Users/h/Desktop'
     save_fname = join('/Users/h/Desktop', os.path.basename(fname)[:-4] + '_NDA.csv')
     merge_df.to_csv(save_fname)
+
+# %%

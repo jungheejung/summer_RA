@@ -10,6 +10,7 @@ for file_path in file_paths:
     data_frames.append(df)
 #%%
 merged_data = pd.concat(data_frames, ignore_index=True)
+#%%
 merged_data.to_csv('/Users/owencollins/Desktop/mergedfdmean.tsv', sep='\t', index=False)
 
 
