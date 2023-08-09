@@ -50,7 +50,7 @@ sub = sub_list[slurm_id]
 # extract dvars and fd info from fmriprep_confounds_timeseries
 # calculate mean and append it with BIDS data
 flist = sorted(glob.glob(join(fmriprep_dir, sub, '*', 'func', f'{sub}_*_task-{task}_acq-mb8_run-*_desc-confounds_timeseries.tsv'), recursive=True))
-meandf = pd.DataFrame(columns=['sub', 'ses', 'run', 'fd_mean', 'dvars_mean'], index = range(len(flist)))
+meandf = pd.DataFrame(columns=['sub', 'ses', 'run', 'fd_mean', 'dvars_mean', 'global_siganl', ], index = range(len(flist)))
 for ind, fpath in enumerate(sorted(flist)):
     # calculate mean and add BIDS information
     fmridf = pd.read_csv(fpath, sep = '\t')
