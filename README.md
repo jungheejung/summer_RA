@@ -8,11 +8,5 @@
 
 * The scripts sub-folder contains useful scripts for plotting and data analysis
 
-
-`variable`
-
-
-
-```
-code blocks
-```
+## Codes
+* `scripts/fd_mean_spacetop.py` is a generic code to be able to gather data from the Discovery Cluster (needs to be run with `SLURM_task.sh`)

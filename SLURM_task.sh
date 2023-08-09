@@ -9,7 +9,7 @@
 #SBATCH --account=DBIC
 #SBATCH --partition=standard
 #SBATCH --array=4%10
-# make it my own
+
 conda activate spacetop_env
 echo "SLURMSARRAY: " ${SLURM_ARRAY_TASK_ID}
 ID=$((SLURM_ARRAY_TASK_ID-1))
