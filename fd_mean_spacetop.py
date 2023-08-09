@@ -33,13 +33,13 @@ parser.add_argument("--fmriprepdir",
                     type=str, help="the top directory of fmriprep preprocessed files")
 parser.add_argument("--savedir", 
                     type=str, help="the directory where you want to save your files")
-parser.add_argument("--narrativedir",
-                    type=str, help="the dircetory of narrative task files")
+parser.add_argument("--task",
+                    type=str, help="task name from spacetop")
 args = parser.parse_args()
 slurm_id = args.slurm_id
 fmriprep_dir = args.fmriprepdir
 save_dir = args.savedir
-narrative_dir = args.narrativedir
+task = args.task
 sub_folders = next(os.walk(fmriprep_dir))[1]
 print(sub_folders)
 sub_list = [i for i in sorted(sub_folders) if i.startswith('sub-')]
@@ -49,7 +49,6 @@ sub = sub_list[slurm_id]
 # ----------------------------------------------------------------------
 # extract dvars and fd info from fmriprep_confounds_timeseries
 # calculate mean and append it with BIDS data
-task='narrative'
 flist = sorted(glob.glob(join(fmriprep_dir, sub, '*', 'func', f'{sub}_*_task-{task}_acq-mb8_run-*_desc-confounds_timeseries.tsv'), recursive=True))
 meandf = pd.DataFrame(columns=['sub', 'ses', 'run', 'fd_mean', 'dvars_mean'], index = range(len(flist)))
 for ind, fpath in enumerate(sorted(flist)):
