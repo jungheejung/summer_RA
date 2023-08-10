@@ -372,10 +372,14 @@ summarySEwithin <- function(data = NULL, measurevar, betweenvars = NULL, withinv
 # df <- read.csv("/Users/h/Documents/summer/summer_RA/fdmean_run_type.tsv")
 narrativesdf <- read.table(file = "~/Desktop/summer_RA/data/merged_task-narratives.tsv", sep = '\t', header = TRUE)
 facesdf <- read.table(file = "~/Desktop/summer_RA/data/merged_task-faces.tsv", sep = '\t', header = TRUE)
+#adding a task column
 facesdf$task<- "faces"
 narrativesdf$task<-"narratives"
+# would need to make new df for other tasks
 fdmeandf<- rbind(facesdf, narrativesdf)
-# creating a new dataframe from multiple data frames in order to add to one plot
+#need to call new data frame fdmeandf to make code generic even though there is nothing to do with the fd mean
+# creating a new data frame from multiple data frames in order to add to one plot
+# make sure to add the different task when rbinding
 ```
 
 ```{r}
