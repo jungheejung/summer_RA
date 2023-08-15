@@ -471,7 +471,7 @@ plot_savefname <- file.path(
 # * change theme
 # * adjust the box plots
 
-ylim <- c(1000,6500)
+ylim <- c(1500,6000)
 # check bounds
 taskname = "all"
 w <- 10; h <- 5
