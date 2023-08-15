@@ -406,7 +406,7 @@ df$sub_factor <- factor(df$sub)
 ```
 
 ```{r}
-# summary(model.fdmean)
+#summary(model.fdmean)
 ```
 
 ```{r}
@@ -423,7 +423,7 @@ df$sub_factor <- factor(df$sub)
 
 subject <- "sub_factor"
 model_iv <- "task"
-dv <- "globalsignal_mean"
+dv <- "dvars_mean"
 subjectwise <- meanSummary(df,c(subject, model_iv), dv)
 
 groupwise <- summarySEwithin(
@@ -445,7 +445,7 @@ subject <- "sub_factor"
 ggtitle <- paste( dv)
 title <- paste( dv)
 xlab <- ""
-ylab <- "Global Signal Mean (a.u)"
+ylab <- "Dvars Mean "
 
 dv_keyword <- "fdmean"
 if (any(startsWith(dv_keyword, c("expect", "Expect")))) {
@@ -471,7 +471,7 @@ plot_savefname <- file.path(
 # * change theme
 # * adjust the box plots
 
-ylim <- c(1500,6000)
+ylim <- c(25,55)
 # check bounds
 taskname = "all"
 w <- 10; h <- 5
@@ -496,6 +496,7 @@ g <- plot_halfrainclouds_onefactor(
   plot_savefname
 )
 g <- g + theme_bw() + theme_classic()
+g + coord_flip()
 print(g)
 
 
