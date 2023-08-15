@@ -445,7 +445,7 @@ subject <- "sub_factor"
 ggtitle <- paste( dv)
 title <- paste( dv)
 xlab <- ""
-ylab <- "Dvars Mean "
+ylab <- "Dvars Mean (a.u)"
 
 dv_keyword <- "fdmean"
 if (any(startsWith(dv_keyword, c("expect", "Expect")))) {
